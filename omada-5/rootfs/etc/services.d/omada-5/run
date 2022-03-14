@@ -14,9 +14,10 @@ declare OMADA_PERSIST
 
 # ## Get the 'message' key from the user config options.
 # message=$(bashio::config 'message')
-CMD="/usr/bin/java -server -Xms128m -Xmx1024m -XX:MaxHeapFreeRatio=60 -XX:MinHeapFreeRatio=30 -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/data/omada/logs/java_heapdump.hprof -Djava.awt.headless=true -cp /opt/tplink/EAPController/lib/*::/opt/tplink/EAPController/properties: com.tplink.smb.omada.starter.OmadaLinuxMain"
 OMADA_DIR="/opt/tplink/EAPController"
-OMADA_PERSIST="/data/omada"
+OMADA_PERSIST="/share/omada"
+
+CMD="/usr/bin/java -server -Xms128m -Xmx1024m -XX:MaxHeapFreeRatio=60 -XX:MinHeapFreeRatio=30 -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=${OMADA_PERSIST}/logs/java_heapdump.hprof -Djava.awt.headless=true -cp ${OMADA_DIR}/lib/*::${OMADA_DIR}/properties: com.tplink.smb.omada.starter.OmadaLinuxMain"
 
 ## Print the message the user supplied, defaults to "Hello World..."
 # bashio::log.info "[run] ${message:="Hello World..."}"
@@ -28,7 +29,7 @@ bashio::log.info "[run] Hello World..."
 # check to see if there is a db directory; create it if it is missing
 bashio::log.info "[run] Start"
 # ------------------------------------
-if [ ! -d "/data/omada" ]
+if [ ! -d "${OMADA_PERSIST}" ]
 then
     bashio::log.info "[run] omada deirectory missing; running 'init.sh'"
     /init.sh ${OMADA_DIR} ${OMADA_PERSIST}

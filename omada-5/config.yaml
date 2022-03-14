@@ -1,6 +1,6 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: Omada Controller 5
-version: "1.0.0"
+version: "1.2.0"
 slug: "omada-5"
 description: "Omada Controller Version 5"
 url: "https://github.com/SoulOfNoob/HASSIO-Addons/tree/main/omada-5"
@@ -47,14 +47,5 @@ ports_description:
   29812/udp: "Used for device discovery"
   29813/tcp: "Used for device discovery"
   29813/udp: "Used for device discovery"
-#map:
-#  - backup:rw
-#  - ssl
-options:
-  ssl: true
-  certfile: "fullchain.pem"
-  keyfile: "privkey.pem"
-schema:
-  ssl: bool
-  certfile: str
-  keyfile: str
+map:
+  - share:rw

@@ -15,11 +15,16 @@ ARG OMADA_URL="https://static.tp-link.com/upload/software/2022/202201/20220120/$
 ARG BUILD_ARCH
 ARG ARCH=${BUILD_ARCH}
 
+ARG OMADA_DIR="/opt/tplink/EAPController"
+ARG OMADA_PERSIST="/share/omada"
+
 RUN \
     set -x \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
-        wget
+        wget \
+        file \
+        tree
 
 # download scripts from mbentley's omada repo
 RUN \
@@ -43,15 +48,18 @@ RUN \
 RUN \
     set -x \
     && sed -i 's;armv7l;armv7|armv7l;g' install.sh \
-    && sed -i 's;amd64|arm64|"";amd64|arm64|aarch64|"";g' install.sh
+    && sed -i 's;amd64|arm64|"";amd64|arm64|aarch64|"";g' install.sh \
+    && sed -i 's; data ; ;g' install.sh \
+    && sed -i 's; "\${OMADA_DIR}/data" ; ;g' install.sh
+    
 
 # set HASSIO path in entrypoint script
 RUN \
     set -x \
-    sed -i 's;/opt/tplink/EAPController/\${DIR};/data/omada/\${DIR};g' entrypoint.sh \
-    && sed -i 's;/opt/tplink/EAPController/data;/data/omada/data;g' entrypoint.sh \
-    && sed -i 's;/opt/tplink/EAPController/work;/data/omada/work;g' entrypoint.sh \
-    && sed -i 's;/opt/tplink/EAPController/logs;/data/omada/logs;g' entrypoint.sh
+    sed -i 's;${OMADA_DIR}/\${DIR};${OMADA_PERSIST}/\${DIR};g' entrypoint.sh \
+    && sed -i 's;${OMADA_DIR}/data;${OMADA_PERSIST}/data;g' entrypoint.sh \
+    && sed -i 's;${OMADA_DIR}/work;${OMADA_PERSIST}/work;g' entrypoint.sh \
+    && sed -i 's;${OMADA_DIR}/logs;${OMADA_PERSIST}/logs;g' entrypoint.sh
 
 # prevent entrypoint from start application
 RUN sed -i 's;exec;#;g' entrypoint.sh
@@ -74,6 +82,8 @@ COPY init.sh /
 RUN chmod a+x /init.sh
 COPY fixpermissions.sh /
 RUN chmod a+x /fixpermissions.sh
+
+# RUN chown root:root /opt/tplink/EAPController/data
 
 WORKDIR /opt/tplink/EAPController/lib
 EXPOSE 8088 8043 8843 29810/udp 29811 29812 29813 29814
