@@ -7,14 +7,14 @@ ARCH="${ARCH:-}"
 echo "[custom_install] install mongodb"
 apt-get update
 case "${ARCH}" in
-amd64|arm64|"")
+amd64|arm64|aarch64|"")
   apt-get install --no-install-recommends -y "mongodb-server-core"
   ;;
-armv7l)
+armv7|armv7l)
   apt-get install --no-install-recommends -y "mongodb"
   ;;
 *)
-  die "${ARCH}: unsupported ARCH"
+  echo "${ARCH}: unsupported ARCH"
   ;;
 esac
 
