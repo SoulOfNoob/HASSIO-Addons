@@ -12,7 +12,6 @@ ARG OMADA_VER=5.0.30
 ARG OMADA_TAR="Omada_SDN_Controller_v${OMADA_VER}_linux_x64.tar.gz"
 ARG OMADA_URL="https://static.tp-link.com/upload/software/2022/202201/20220120/${OMADA_TAR}"
 
-# valid values: amd64 (default) | arm64 | armv7l
 ARG BUILD_ARCH
 ARG ARCH=${BUILD_ARCH}
 
@@ -66,6 +65,7 @@ RUN /bin/sh -c /log4j_patch.sh
 # set default shell to bash
 RUN usermod --shell /bin/bash omada
 
+# define volume mountpoint to persist changes
 VOLUME /data
 
 # copy data to container
