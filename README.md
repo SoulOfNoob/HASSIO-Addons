@@ -7,17 +7,6 @@ Add-on documentation: <https://developers.home-assistant.io/docs/add-ons>
 ## Add-ons
 
 This repository contains the following add-ons
-
-### [Example add-on](./example)
-
-![Supports aarch64 Architecture][aarch64-yes-shield]
-![Supports amd64 Architecture][amd64-yes-shield]
-![Supports armhf Architecture][armhf-yes-shield]
-![Supports armv7 Architecture][armv7-yes-shield]
-![Supports i386 Architecture][i386-yes-shield]
-
-_Example add-on to use as a blueprint for new add-ons._
-
 ### [Omada Controller 5 add-on](./omada-5)
 
 ![Supports amd64 Architecture][amd64-yes-shield]
