@@ -22,7 +22,8 @@ _Example add-on to use as a blueprint for new add-ons._
 
 ![Supports amd64 Architecture][amd64-yes-shield]
 ![Supports armv7 Architecture][armv7-yes-shield]
-![Supports armv7 Architecture][arm64-yes-shield]
+![Supports armv7l Architecture][armv7l-yes-shield]
+![Supports arm64 Architecture][arm64-yes-shield]
 ![Supports aarch64 Architecture][aarch64-yes-shield]
 ![Supports armhf Architecture][armhf-no-shield]
 ![Supports i386 Architecture][i386-no-shield]
@@ -57,5 +58,7 @@ Notes to developers after forking or using the github template feature:
 [armhf-no-shield]: https://img.shields.io/badge/armhf-no-red.svg
 [armv7-yes-shield]: https://img.shields.io/badge/armv7-yes-green.svg
 [armv7-no-shield]: https://img.shields.io/badge/armv7-no-red.svg
+[armv7l-yes-shield]: https://img.shields.io/badge/armv7l-yes-green.svg
+[armv7l-no-shield]: https://img.shields.io/badge/armv7l-no-red.svg
 [i386-yes-shield]: https://img.shields.io/badge/i386-yes-green.svg
 [i386-no-shield]: https://img.shields.io/badge/i386-no-red.svg
