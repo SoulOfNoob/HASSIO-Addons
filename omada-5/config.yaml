@@ -1,6 +1,6 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: Omada Controller 5
-version: "1.3.0"
+version: "1.3.1"
 slug: "omada-5"
 description: "Omada Controller Version 5"
 url: "https://github.com/SoulOfNoob/HASSIO-Addons/tree/main/omada-5"
@@ -10,7 +10,6 @@ webui: "https://[HOST]:[PORT:8043]"
 #ingress_entry: /
 panel_icon: mdi:server-network
 panel_title: Omada 5
-panel_admin: true
 startup: system
 arch:
   - armv7
