@@ -59,6 +59,6 @@ ls -al ${OMADA_DIR}
 bashio::log.info "[run] Starting Controller"
 cd ${OMADA_DIR}/lib
 /entrypoint.sh ${CMD}
-exec gosu omada ${CMD}
+# exec gosu omada ${CMD}
 # ------------------------------------
 bashio::log.info "[run] Done"

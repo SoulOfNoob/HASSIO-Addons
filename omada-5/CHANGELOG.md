@@ -2,6 +2,10 @@
 
 ## 1.2.0
 
+- rework dockerfile to use multistage build
+
+## 1.2.0
+
 - change persistance to "/share" folder
 
 ## 1.0.0
