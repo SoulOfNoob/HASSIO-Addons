@@ -1,0 +1,60 @@
+# https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
+name: Omada Controller 5
+version: "1.1.2"
+slug: "omada-5"
+description: "Omada Controller Version 5"
+url: "https://github.com/SoulOfNoob/HASSIO-Addons/tree/main/omada-5"
+webui: "https://[HOST]:[PORT:8043]"
+#ingress: true
+#ingress_port: 8088
+#ingress_entry: /
+panel_icon: mdi:server-network
+panel_title: Omada 5
+panel_admin: true
+startup: system
+arch:
+  - armv7
+  - aarch64
+  - amd64
+init: false
+#hassio_api: true
+#image: "mbentley/omada-controller"
+ports:
+  8088/tcp: 8088
+  8043/tcp: 8043
+  8843/tcp: 8843
+  27001/udp: 27001
+  27002/tcp: 27002
+  29810/tcp: 29810
+  29810/udp: 29810
+  29811/tcp: 29811
+  29811/udp: 29811
+  29812/tcp: 29812
+  29812/udp: 29812
+  29813/tcp: 29813
+  29813/udp: 29813
+ports_description:
+  8088/tcp: "Used for Omada Controller interface and API"
+  8043/tcp: "Used for Omada Controller interface and API"
+  8843/tcp: "Used for HTTPS redirection of the web interface"
+  27001/udp: "Used for device discovery"
+  27002/tcp: "Used for device discovery"
+  29810/tcp: "Used for device discovery"
+  29810/udp: "Used for device discovery"
+  29811/tcp: "Used for device discovery"
+  29811/udp: "Used for device discovery"
+  29812/tcp: "Used for device discovery"
+  29812/udp: "Used for device discovery"
+  29813/tcp: "Used for device discovery"
+  29813/udp: "Used for device discovery"
+#map:
+#  - backup:rw
+#  - ssl
+options:
+  ssl: true
+  certfile: "fullchain.pem"
+  keyfile: "privkey.pem"
+schema:
+  ssl: bool
+  certfile: str
+  keyfile: str
