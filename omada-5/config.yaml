@@ -1,6 +1,6 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: Omada Controller 5
-version: "1.3.5"
+version: "1.4.0"
 slug: "omada-5"
 description: "Omada Controller Version 5"
 url: "https://github.com/SoulOfNoob/HASSIO-Addons/tree/main/omada-5"
@@ -48,3 +48,7 @@ ports_description:
   29813/udp: "Used for device discovery"
 map:
   - share:rw
+options:
+  resetData: false
+schema:
+  resetData: "bool"

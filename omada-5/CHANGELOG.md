@@ -1,6 +1,10 @@
 <!-- https://developers.home-assistant.io/docs/add-ons/presentation#keeping-a-changelog -->
 
-## 1.2.0
+## 1.4.0
+
+- provide data reset flag in settings
+
+## 1.3.0
 
 - rework dockerfile to use multistage build
 
