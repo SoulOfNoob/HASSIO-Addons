@@ -8,14 +8,15 @@
 
 # # Declare variables
 # declare message
-declare resetData
+declare RESET
 declare CMD
 declare OMADA_DIR
 declare OMADA_PERSIST
+declare VAR1
 
 # ## Get the 'message' key from the user config options.
 # message=$(bashio::config 'message')
-resetData=$(bashio::config 'resetData')
+RESET=$(bashio::config 'reset')
 OMADA_DIR="/opt/tplink/EAPController"
 OMADA_PERSIST="/share/omada"
 
@@ -27,7 +28,7 @@ CMD="/usr/bin/java -server -Xms128m -Xmx1024m -XX:MaxHeapFreeRatio=60 -XX:MinHea
 # check to see if there is a db directory; create it if it is missing
 bashio::log.info "[run] Start"
 # ------------------------------------
-if [ ${resetData} ]
+if [[ ! "${RESET}" == *"null"* ]] && ${RESET}
 then
     bashio::log.info "[run] deleteing persistent data"
     rm -rf ${OMADA_PERSIST}
