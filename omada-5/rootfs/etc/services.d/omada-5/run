@@ -19,10 +19,6 @@ OMADA_PERSIST="/share/omada"
 
 CMD="/usr/bin/java -server -Xms128m -Xmx1024m -XX:MaxHeapFreeRatio=60 -XX:MinHeapFreeRatio=30 -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=${OMADA_PERSIST}/logs/java_heapdump.hprof -Djava.awt.headless=true -cp ${OMADA_DIR}/lib/*::${OMADA_DIR}/properties: com.tplink.smb.omada.starter.OmadaLinuxMain"
 
-## Print the message the user supplied, defaults to "Hello World..."
-# bashio::log.info "[run] ${message:="Hello World..."}"
-bashio::log.info "[run] Hello World..."
-
 ## Run your program
 # exec my_program --with-params
 
@@ -36,12 +32,9 @@ then
 fi
 # ------------------------------------
 bashio::log.info "[run] Fix permissions"
-/fixpermissions.sh
-# ------------------------------------
-bashio::log.info "[run] Remove Dirs"
-rm -rf ${OMADA_DIR}/data
-rm -rf ${OMADA_DIR}/work
-rm -rf ${OMADA_DIR}/logs
+chmod 755 /etc
+chmod 755 /usr
+chmod 755 /usr/bin
 # ------------------------------------
 bashio::log.info "[run] Create symlinks"
 ln -sf ${OMADA_PERSIST}/data ${OMADA_DIR}/data
@@ -59,6 +52,5 @@ ls -al ${OMADA_DIR}
 bashio::log.info "[run] Starting Controller"
 cd ${OMADA_DIR}/lib
 /entrypoint.sh ${CMD}
-# exec gosu omada ${CMD}
 # ------------------------------------
 bashio::log.info "[run] Done"

@@ -3,6 +3,7 @@
 set -e
 
 ARCH="${ARCH:-}"
+OMADA_DIR="${OMADA_DIR:-}"
 
 echo "[custom_install] install mongodb"
 apt-get update
@@ -26,3 +27,7 @@ echo "[custom_install]  Setup omada User Account"
 groupadd -g 508 omada
 useradd -u 508 -g 508 -d "${OMADA_DIR}" omada
 usermod --shell /bin/bash omada
+
+rm -rf ${OMADA_DIR}/data
+rm -rf ${OMADA_DIR}/work
+rm -rf ${OMADA_DIR}/logs

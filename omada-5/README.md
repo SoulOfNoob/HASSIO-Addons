@@ -1,6 +1,6 @@
 # Home Assistant Add-on: Omada Controller 5
 
-_Omada Controller V5 addon for Home Assistant_
+_Omada Controller 5 addon for Home Assistant_
 
 ![Supports amd64 Architecture][amd64-yes-shield]
 ![Supports armv7 Architecture][armv7-yes-shield]
