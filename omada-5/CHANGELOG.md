@@ -1,5 +1,9 @@
 <!-- https://developers.home-assistant.io/docs/add-ons/presentation#keeping-a-changelog -->
 
+## 1.5.0
+
+- bump ubuntu (20.4) and omada (5.4) Versions
+
 ## 1.4.0
 
 - provide data reset flag in settings

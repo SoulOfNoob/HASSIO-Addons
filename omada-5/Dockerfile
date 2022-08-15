@@ -1,5 +1,5 @@
 ARG BUILD_FROM
-FROM mbentley/omada-controller:5.0 AS mbentley
+FROM mbentley/omada-controller:5.4 AS mbentley
 
 ARG BUILD_FROM
 FROM ${BUILD_FROM}

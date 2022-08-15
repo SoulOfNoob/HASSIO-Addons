@@ -3,10 +3,10 @@
 _Omada Controller 5 addon for Home Assistant_
 
 ![Supports amd64 Architecture][amd64-yes-shield]
-![Supports armv7 Architecture][armv7-yes-shield]
-![Supports armv7l Architecture][armv7l-yes-shield]
 ![Supports arm64 Architecture][arm64-yes-shield]
 ![Supports aarch64 Architecture][aarch64-yes-shield]
+![Supports armv7 Architecture][armv7-no-shield]
+![Supports armv7l Architecture][armv7l-no-shield]
 ![Supports armhf Architecture][armhf-no-shield]
 ![Supports i386 Architecture][i386-no-shield]
 

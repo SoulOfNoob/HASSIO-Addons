@@ -1,6 +1,6 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: Omada Controller 5
-version: "1.4.2"
+version: "1.5.0"
 slug: "omada-5"
 description: "Omada Controller Version 5"
 url: "https://github.com/SoulOfNoob/HASSIO-Addons/tree/main/omada-5"
