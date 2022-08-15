@@ -1,13 +1,13 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: Omada Controller 5
-version: "1.4.2"
+version: "1.4.6"
 slug: "omada-5"
 description: "Omada Controller Version 5"
 url: "https://github.com/SoulOfNoob/HASSIO-Addons/tree/main/omada-5"
-webui: "https://[HOST]:[PORT:8043]"
-#ingress: true
-#ingress_port: 8088
-#ingress_entry: /
+#webui: "https://[HOST]:[PORT:8043]"
+ingress: true
+ingress_port: 8099
+ingress_entry: /
 panel_icon: mdi:server-network
 panel_title: Omada 5
 startup: system
@@ -16,8 +16,6 @@ arch:
   - aarch64
   - amd64
 init: false
-#hassio_api: true
-#image: "mbentley/omada-controller"
 ports:
   8088/tcp: 8088
   8043/tcp: 8043

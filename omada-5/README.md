@@ -24,3 +24,26 @@ _Omada Controller 5 addon for Home Assistant_
 [armv7l-no-shield]: https://img.shields.io/badge/armv7l-no-red.svg
 [i386-yes-shield]: https://img.shields.io/badge/i386-yes-green.svg
 [i386-no-shield]: https://img.shields.io/badge/i386-no-red.svg
+
+## Local teting
+
+Mac:
+
+```bash
+docker run \
+  --rm \
+  -it \
+  --name builder \
+  --privileged \
+  -v ~/Documents/GitHub/HASSIO-Addons/omada-5:/data \
+  -v /var/run/docker.sock:/var/run/docker.sock:ro \
+  homeassistant/aarch64-builder \
+  -t /data \
+  --all \
+  --test \
+  -i omada-5-{arch} \
+  -d local \
+  && \
+  docker run \
+  local/omada-5-armv7:latest
+```

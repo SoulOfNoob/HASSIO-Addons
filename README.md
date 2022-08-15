@@ -7,6 +7,7 @@ Add-on documentation: <https://developers.home-assistant.io/docs/add-ons>
 ## Add-ons
 
 This repository contains the following add-ons
+
 ### [Omada Controller 5 add-on](./omada-5)
 
 ![Supports amd64 Architecture][amd64-yes-shield]
@@ -17,10 +18,9 @@ This repository contains the following add-ons
 ![Supports armhf Architecture][armhf-no-shield]
 ![Supports i386 Architecture][i386-no-shield]
 
-_Omada Controller V5 addon for Home Assistant_
+_Omada Controller 5 addon for Home Assistant_
 
 <!--
-
 Notes to developers after forking or using the github template feature:
 - While developing comment out the 'image' key from 'example/config.yaml' to make the supervisor build the addon
   - Remember to put this back when pushing up your changes.

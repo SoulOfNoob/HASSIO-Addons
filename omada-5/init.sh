@@ -17,7 +17,7 @@ bashio::log.info "[init] Prepare Logs"
 touch ${OMADA_PERSIST}/logs/server.log
 touch ${OMADA_PERSIST}/logs/mongod.log
 # ------------------------------------
-bashio::log.info "[init] Set omada permissions"
+# bashio::log.info "[init] Set omada permissions"
 chown -R omada:omada "${OMADA_PERSIST}"
 # ------------------------------------
 bashio::log.info "[init] Copy folder contents"
