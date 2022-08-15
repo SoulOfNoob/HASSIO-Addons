@@ -34,7 +34,12 @@ RUN \
     && apt-get install -y --no-install-recommends \
         gosu \
         openjdk-8-jre-headless \
-        wget
+        wget \
+        nginx \
+    && mkdir -p /run/nginx
+
+#Copy our conf into the nginx http.d folder.
+COPY /ingress.conf /etc/nginx/sites-enabled/
 
 # copy from filesystem
 COPY /rootfs /
@@ -45,5 +50,5 @@ RUN chmod a+x /init.sh
 VOLUME [ "/data", "/share" ]
 
 WORKDIR ${OMADA_DIR}/lib
-EXPOSE 8088 8043 8843 29810/udp 29811 29812 29813 29814
+EXPOSE 8099 8088 8043 8843 29810/udp 29811 29812 29813 29814
 HEALTHCHECK --start-period=5m CMD /healthcheck.sh

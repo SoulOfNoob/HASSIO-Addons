@@ -57,6 +57,11 @@ chown -h omada:omada ${OMADA_DIR}/logs
 bashio::log.info "[run] List"
 ls -al ${OMADA_DIR}
 # ------------------------------------
+bashio::log.info "[run] Launch nginx"
+which nginx
+cat /etc/nginx/sites-enabled/ingress.conf
+service nginx restart || bashio::log.error "[run] Launch nginx Failed"
+# ------------------------------------
 bashio::log.info "[run] Starting Controller"
 cd ${OMADA_DIR}/lib || exit
 /entrypoint.sh ${CMD}
