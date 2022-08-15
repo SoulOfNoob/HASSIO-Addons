@@ -7,17 +7,24 @@ Add-on documentation: <https://developers.home-assistant.io/docs/add-ons>
 ## Add-ons
 
 This repository contains the following add-ons
+
 ### [Omada Controller 5 add-on](./omada-5)
 
 ![Supports amd64 Architecture][amd64-yes-shield]
-![Supports armv7 Architecture][armv7-yes-shield]
-![Supports armv7l Architecture][armv7l-yes-shield]
 ![Supports arm64 Architecture][arm64-yes-shield]
 ![Supports aarch64 Architecture][aarch64-yes-shield]
+![Supports armv7 Architecture][armv7-no-shield]
+![Supports armv7l Architecture][armv7l-no-shield]
 ![Supports armhf Architecture][armhf-no-shield]
 ![Supports i386 Architecture][i386-no-shield]
 
 _Omada Controller V5 addon for Home Assistant_
+
+## Resources
+
+- [https://developers.home-assistant.io/docs/add-ons/]
+- [https://developers.home-assistant.io/docs/architecture_components]
+- [https://code.visualstudio.com/docs/remote/containers]
 
 <!--
 
