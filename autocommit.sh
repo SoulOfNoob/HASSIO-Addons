@@ -5,6 +5,7 @@ do
     case "${flag}" in
         m) message=${OPTARG};;
         t) tag=${OPTARG};;
+        *) break;;
     esac
 done
 
